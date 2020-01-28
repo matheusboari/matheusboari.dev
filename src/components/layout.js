@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import styled, { createGlobalStyle } from "styled-components"
 import { MdAccountCircle, MdPhonelink, MdMail } from 'react-icons/md'
@@ -154,6 +155,10 @@ export default function Layout ({ children }) {
   return (
     <Container>
       <GlobalStyle />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Matheus Boari</title>
+      </Helmet>
       <nav>
         <div>
           <a href="/">
