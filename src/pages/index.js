@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -7,20 +7,32 @@ import Layout from "../components/layout"
 const Container = styled.div`
   display: flex;
   max-width: 960px;
+  overflow: hidden;
+
+  @media (max-width: 660px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Img = styled.img`
   width: 200px;
   object-fit: cover;
   margin-right: 1.5em;
+
+  @media (max-width: 660px) {
+    border-radius: 50%;
+  }
 `;
 
 const About = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 2rem;
 
   h1 {
-    font-size: 2em;
+    font-size: 4.8rem;
     margin: 0.4em 0px 0.67em;
   }
 
@@ -39,6 +51,14 @@ const About = styled.div`
   a {
     color: #388889;
     text-decoration: underline #388889;
+  }
+
+  @media (max-width: 660px) {
+    font-size: 1.75rem;
+
+    h1 {
+      font-size: 3rem;
+    }
   }
 `;
 

@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
+import { Location } from '@reach/router'
 import styled, { createGlobalStyle } from "styled-components"
 import { MdAccountCircle, MdPhonelink, MdMail } from 'react-icons/md'
 import { IconContext } from 'react-icons'
@@ -20,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #root {
+    font-size: 62.5%;
   }
 
   body {
@@ -27,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body, input, button {
-    font: 24px 'Roboto', sans-serif;
+    font: 1rem 'Roboto', sans-serif;
   }
 
   a {
@@ -53,6 +55,10 @@ const Container = styled.div`
   justify-content: center;
   background-color: #5C404F;
   color: #FAEFC2;
+
+  main {
+    padding: 3rem;
+  }
 
   nav {
     position: fixed;
@@ -80,51 +86,6 @@ const Container = styled.div`
       -webkit-box-flex: 1;
       flex-grow: 1;
       font-family: var(--sansFont);
-      
-      a {
-        position: relative;
-        user-select: none;
-        text-align: center;
-        font-weight: bold;
-        font-size: 92.5%;
-        line-height: 1;
-        display: flex;
-        flex-direction: column;
-        -webkit-box-pack: start;
-        justify-content: flex-start;
-        -webkit-box-align: center;
-        align-items: center;
-        -webkit-tap-highlight-color: transparent;
-        transition: all 100ms ease-in-out 0s;
-        text-decoration: none;
-        padding: 0.45rem 0.9rem;
-        margin: 0.5rem 0px;
-        border-radius: 10px;
-
-        > div {
-          display: flex;
-          flex-direction: column;
-          -webkit-box-pack: start;
-          justify-content: flex-start;
-          -webkit-box-align: center;
-          align-items: center;
-
-          .icon {
-            display: block;
-            width: 1.3em;
-            height: 1.3em;
-            filter: saturate(95%) opacity(95%);
-            margin-bottom: 0.5rem;
-            transition: all 100ms ease-in-out 0s
-          }
-
-          span {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            display: block;
-          }
-        }
-      }
     }
   }
 
@@ -151,7 +112,61 @@ const Container = styled.div`
   }
 `
 
+const NavItem = styled.a`
+  position: relative;
+  user-select: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 92.5%;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 100ms ease-in-out 0s;
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  margin: 0.5rem 0px;
+  border-radius: 10px;
+
+  color: ${props => props.active ? '#388889' : '#FAEFC2'};
+
+  &:hover {
+    color: #388889;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+
+    .icon {
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      filter: saturate(95%) opacity(95%);
+      margin-bottom: 0.5rem;
+      transition: all 100ms ease-in-out 0s;
+    }
+
+    span {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      display: block;
+      transition: all 100ms ease-in-out 0s;
+    }
+  }
+`;
+
 export default function Layout ({ children }) {
+  const [path, setPath] = useState('/')
+
   return (
     <Container>
       <GlobalStyle />
@@ -159,32 +174,37 @@ export default function Layout ({ children }) {
         <meta charSet="utf-8" />
         <title>Matheus Boari</title>
       </Helmet>
+
+      <Location>
+        {({ _, location }) => setPath(location.pathname)}
+      </Location>
+
       <nav>
         <div>
-          <a href="/">
+          <NavItem href="/" active={path === '/'}>
             <div>
               <IconContext.Provider value={{ className: "icon" }}>
                 <MdAccountCircle />
               </IconContext.Provider>
               <span>About</span>
             </div>
-          </a>
-          <a href="/projects">
+          </NavItem>
+          <NavItem href="/projects" active={path === '/projects'}>
             <div>
               <IconContext.Provider value={{ className: "icon" }}>
                 <MdPhonelink />
               </IconContext.Provider>
               <span>Projects</span>
             </div>
-          </a>
-          <a href="/contact">
+          </NavItem>
+          <NavItem href="/contact" active={path === '/contact'}>
             <div>
               <IconContext.Provider value={{ className: "icon" }}>
                 <MdMail />
               </IconContext.Provider>
               <span>Contact</span>
             </div>
-          </a>
+          </NavItem>
         </div>
       </nav>
       <main>{children}</main>
