@@ -2,7 +2,7 @@ import React from "react"
 // import { Link } from "gatsby"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
+// import Layout from "../components/layout"
 
 const Container = styled.div`
   display: flex;
@@ -65,7 +65,7 @@ const About = styled.div`
 
 export default function AboutMe() {
   return (
-    <Layout>
+    <>
       <Container>
         <Img src={'https://avatars2.githubusercontent.com/u/32587264?s=460&v=4'} />
         <About>
@@ -78,6 +78,6 @@ export default function AboutMe() {
           </div>
         </About>
       </Container>
-    </Layout>
+    </>
   )
 }

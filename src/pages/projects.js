@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { darken } from 'polished'
 import posed from 'react-pose';
 
-import Layout from "../components/layout"
+// import Layout from "../components/layout"
 
 import kronome from '../images/kronome.png'
 
@@ -153,7 +153,7 @@ export default function SecondPage() {
   const [goBarberMobile, setGoBarberMobile] = useState(false);
 
   return (
-    <Layout>
+    <>
       <Description>
         <h1>Web development portfolio</h1>
         <p>My focus is on front-end development, but in my projects, I work with back-end and DBA.</p>
@@ -297,6 +297,6 @@ export default function SecondPage() {
           </div>
         </a>
       </Projects>
-    </Layout>
+    </>
   )
 }
