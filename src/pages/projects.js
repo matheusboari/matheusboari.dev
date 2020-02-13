@@ -114,6 +114,21 @@ const Tags = styled.div`
   }
 `;
 
+const Description = styled.div`
+  width: 100%;
+  margin-bottom: 3rem;
+
+  > h1 {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
+
+  > p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+`;
+
 const Overlay = posed.div({
   hidden: { opacity: 0 },
   visible: { opacity: 1, delayChildren: 200, staggerChildren: 50 },
@@ -139,6 +154,12 @@ export default function SecondPage() {
 
   return (
     <Layout>
+      <Description>
+        <h1>Web development portfolio</h1>
+        <p>My focus is on front-end development, but in my projects, I work with back-end and DBA.</p>
+        <p>Check out bellow</p>
+      </Description>
+
       <Projects>
         <a onMouseEnter={() => setKronomeBool(true)} onMouseLeave={() => setKronomeBool(false)} href="https://kronome.com/" target="_blank">
           <Header>
