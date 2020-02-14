@@ -1,10 +1,7 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
 import styled from 'styled-components'
 import { darken } from 'polished'
 import posed from 'react-pose';
-
-// import Layout from "../components/layout"
 
 import kronome from '../images/kronome.png'
 

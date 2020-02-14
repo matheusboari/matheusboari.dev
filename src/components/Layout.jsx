@@ -132,8 +132,6 @@ const Container = styled.div`
     margin: 0.5rem 0px;
     border-radius: 10px;
 
-    color: ${props => props.active ? '#388889' : '#FAEFC2'};
-
     &:hover {
       color: #388889;
     }
@@ -182,7 +180,7 @@ export default function Layout ({ children }) {
 
       <nav>
         <div>
-          <AniLink className="link" paintDrip hex="#5C404F" to="/">
+          <AniLink className="link" style={{color: `${path === '/' ? '#388889' : '#FAEFC2'}`}} paintDrip hex="#5C404F" to="/">
             <div>
               <IconContext.Provider value={{ className: "icon" }}>
                 <MdAccountCircle />
@@ -190,7 +188,7 @@ export default function Layout ({ children }) {
               <span>About</span>
             </div>
           </AniLink>
-          <AniLink className="link" paintDrip hex="#5C404F" to="/projects">
+          <AniLink className="link" style={{color: `${path === '/projects' ? '#388889' : '#FAEFC2'}`}} paintDrip hex="#5C404F" to="/projects">
             <div>
               <IconContext.Provider value={{ className: "icon" }}>
                 <MdPhonelink />
@@ -198,7 +196,7 @@ export default function Layout ({ children }) {
               <span>Projects</span>
             </div>
           </AniLink>
-          <AniLink className="link" paintDrip hex="#5C404F" to="/contact">
+          <AniLink className="link" style={{color: `${path === '/contact' ? '#388889' : '#FAEFC2'}`}} paintDrip hex="#5C404F" to="/contact">
             <div>
               <IconContext.Provider value={{ className: "icon" }}>
                 <MdMail />
