@@ -58,7 +58,7 @@ const Container = styled.div`
   color: #FAEFC2;
 
   main {
-    padding: 3rem;
+    /* padding: 3rem; */
   }
 
   nav {

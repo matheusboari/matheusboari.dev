@@ -1,8 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
 import styled from "styled-components"
-
-// import Layout from "../components/layout"
 
 const Container = styled.div`
   display: flex;
@@ -62,7 +59,6 @@ const About = styled.div`
   }
 `;
 
-
 export default function AboutMe() {
   return (
     <>
@@ -74,7 +70,7 @@ export default function AboutMe() {
           <div>
             <p>My name's <strong>Matheus Boari</strong>. I'm Full Stack Developer and React evangelistic.</p>
             <p>Living in Angus/ON 🇨🇦, writing for <strong><a href="https://medium.com/@matheusboari" target="__blank">Medium</a></strong> and here soon.</p>
-            <span>For more details, see my <strong><a href="">ré­sumé</a></strong>.</span>
+            <span>For more details, see my <strong><a href="https://drive.google.com/file/d/1YjxNtxUGTRfsBqQjZI990DWXmfQVaGMy/view?usp=sharing" target="_blank">resume</a></strong>.</span>
           </div>
         </About>
       </Container>
