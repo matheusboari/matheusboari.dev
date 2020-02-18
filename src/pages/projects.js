@@ -231,7 +231,7 @@ export default function SecondPage() {
             </div>
           </a>
 
-          <a onMouseEnter={() => setLithaOrders(true)} onMouseLeave={() => setLithaOrders(false)} href="https://kronome.com/" target="_blank">
+          <a onMouseEnter={() => setLithaOrders(true)} onMouseLeave={() => setLithaOrders(false)} href="#" target="_blank">
             <Header>
               <span>Litha Orders</span>
             </Header>
@@ -265,7 +265,7 @@ export default function SecondPage() {
             </div>
           </a>
 
-          <a onMouseEnter={() => setGoBarberWeb(true)} onMouseLeave={() => setGoBarberWeb(false)} href="https://kronome.com/" target="_blank">
+          <a onMouseEnter={() => setGoBarberWeb(true)} onMouseLeave={() => setGoBarberWeb(false)} href="https://github.com/matheusboari/gobarber-web" target="_blank">
             <Header>
               <span>GoBarber Web</span>
             </Header>
@@ -299,7 +299,7 @@ export default function SecondPage() {
             </div>
           </a>
 
-          <a onMouseEnter={() => setGoBarberMobile(true)} onMouseLeave={() => setGoBarberMobile(false)} href="https://kronome.com/" target="_blank">
+          <a onMouseEnter={() => setGoBarberMobile(true)} onMouseLeave={() => setGoBarberMobile(false)} href="https://github.com/matheusboari/gobarber-mobile" target="_blank">
             <Header>
               <span>GoBarber Mobile</span>
             </Header>
